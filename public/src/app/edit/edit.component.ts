@@ -41,7 +41,7 @@ export class EditComponent implements OnInit {
     this._httpService.UpdatePet(this.id, this.pet).subscribe(data => {
       if(data["message"] == "Success") {
         console.log('updated pet', data['message']);
-        this._router.navigate(['/']);
+        this._router.navigate([`/pets/${this.id}`]);
         }
         else{
           this.errors = data["error"];
