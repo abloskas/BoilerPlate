@@ -1,20 +1,21 @@
+<div class="container-fluid">
+    <p *ngIf="errors">{{errors["message"]}}</p>
 
-<p *ngIf="errors">{{errors["message"]}}</p>
+    <a [routerLink]="['/']">Home</a>
 
-<a [routerLink]="['/']">Home</a>
-
-<h2>Edit details on this pet:</h2>
-<div class="custom form-group border border-dark rounded">
-    <form class="edit-pet" (submit)= "editPet()">
-      Name: <input size="45" class="form-control-lg" type="text" name="pet['name']" [(ngModel)]="pet['name']" />
-      Type: <input size="45" class="form-control-lg" type="text" name="pet['type']" [(ngModel)]="pet['type']" />
-      Description: <input size="45" class="form-control-lg" type="text" name="pet['description']" [(ngModel)]="pet['description']" />
-      Skills(optional): 
-      <br>
-      <input size="45" class="form-control-lg" type="text" name="pet['skill_one']" [(ngModel)]="pet['skill_one']" />
-      <input size="45" class="form-control-lg" type="text" name="pet['skill_two']" [(ngModel)]="pet['skill_two']" />
-      <input size="45" class="form-control-lg" type="text" name="pet['skill_three']" [(ngModel)]="pet['skill_three']" />
-      <input class="change btn btn-default color" type="submit" value="Submit">
-      <button class="change btn btn-secondary" [routerLink]="['/']">Cancel</button>
-    </form>
+    <h2>Edit details on this pet:</h2>
+    <div class="custom form-group border border-dark rounded">
+        <form class="edit-pet" (submit)= "editPet()">
+          Name: <input size="45" class="form-control-lg" type="text" name="pet['name']" [(ngModel)]="pet['name']" />
+          Type: <input size="45" class="form-control-lg" type="text" name="pet['type']" [(ngModel)]="pet['type']" />
+          Description: <input size="45" class="form-control-lg" type="text" name="pet['description']" [(ngModel)]="pet['description']" />
+          Skills(optional): 
+          <br>
+          <input size="45" class="form-control-lg" type="text" name="pet['skill_one']" [(ngModel)]="pet['skill_one']" />
+          <input size="45" class="form-control-lg" type="text" name="pet['skill_two']" [(ngModel)]="pet['skill_two']" />
+          <input size="45" class="form-control-lg" type="text" name="pet['skill_three']" [(ngModel)]="pet['skill_three']" />
+          <input class="change btn btn-default color" type="submit" value="Submit">
+          <button class="change btn btn-secondary" [routerLink]="['/']">Cancel</button>
+        </form>
+    </div>
 </div>
