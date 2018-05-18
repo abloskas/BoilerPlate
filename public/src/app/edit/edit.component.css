@@ -15,3 +15,6 @@ button{
     display: inline-block;
     margin: 5px;
 }
+.color{
+    background-color: lightgreen;
+}

@@ -11,3 +11,10 @@ button{
     width: 40%;
     height: auto;
 }
+.change {
+    display: inline-block;
+    margin: 5px;
+}
+.color{
+    background-color: lightgreen;
+}
