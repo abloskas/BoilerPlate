@@ -1,27 +1,28 @@
-<p *ngIf="errors">{{errors["message"]}}</p>
-
-<a [routerLink]="['/']">Home</a>
-
-<h2>Details about {{pet.name}}</h2>
-
-<div class="pet-info">
-  <div class="type">
-    <h3>Pet Type:</h3> 
-    <p>{{pet.type}}</p>
-  </div>
-  <div class="type">
-      <h3>Pet Description:</h3> 
-      <p>{{pet.description}}</p>
-  </div>
-  <div class="type">
-      <h3>Pet Skills:</h3> 
-      <p>{{pet.skill_one}}</p>
-      <p>{{pet.skill_two}}</p>
-      <p>{{pet.skill_three}}</p>
-  </div>
+<div class="container-fluid">
+  <p *ngIf="errors">{{errors["message"]}}</p>
+  <a [routerLink]="['/']">Home</a>
   <br>
-  <h2>Help {{pet.name}} out!</h2>
-  <button (click)="removePet(pet._id)">Adopt {{pet.name}}!</button>
+  <h2>Details about {{pet.name}}</h2>
+  <br>
+  <div class="pet-info">
+    <div class="type">
+      <h3>Pet Type:</h3> 
+      <p>{{pet.type}}</p>
+    </div>
+    <div class="type">
+        <h3>Pet Description:</h3> 
+        <p>{{pet.description}}</p>
+    </div>
+    <div class="type">
+        <h3>Pet Skills:</h3> 
+        <p>{{pet.skill_one}}</p>
+        <p>{{pet.skill_two}}</p>
+        <p>{{pet.skill_three}}</p>
+    </div>
+    <br>
+    <h2>Help {{pet.name}} out!</h2>
+    <button class="btn btn-secondary" (click)="removePet(pet._id)">Adopt {{pet.name}}!</button>
+  </div>
 </div>
 
 

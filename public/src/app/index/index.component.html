@@ -14,7 +14,7 @@
     <tr *ngFor="let pet of pets">
       <td>{{pet.name}}</td>
       <td>{{pet.type}}</td>
-      <td><button [routerLink]="['/pets', pet['_id'], 'edit']">Edit</button> <button [routerLink]="['/pets', pet['_id']]">Details</button></td>
+      <td><button class="custom btn btn-primary" [routerLink]="['/pets', pet['_id'], 'edit']">Edit</button> <button class="custom btn btn-secondary" [routerLink]="['/pets', pet['_id']]">Details</button></td>
     </tr>
   </tbody>
 </table>
