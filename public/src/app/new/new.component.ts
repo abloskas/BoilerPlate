@@ -9,22 +9,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./new.component.css']
 })
 export class NewComponent implements OnInit {
-  newItem = {};
+  newPet = {};
   errors = null;
 
   constructor(private _httpService: HttpService, private _router: Router) { }
 
   ngOnInit() {
-    this.newItem = {name: '' };
+    this.newPet = {name: '', type: '', description: '', skill_one: '', skill_two: '', skill_three: ''};
   }
 
-  addItem() {
-    console.log("adding a new item:", this.newItem);
-    const observable = this._httpService.addItem(this.newItem);
+  addPet() {
+    console.log("adding a new item:", this.newPet);
+    const observable = this._httpService.addPet(this.newPet);
     observable.subscribe(data => {
       if(data["message"] == "Success") {
-      console.log('new item', data);
-      this.newItem = { name: '' };
+      console.log('new pet', data);
+      this.newPet = {name: '', type: '', description: '', skill_one: '', skill_two: '', skill_three: ''};
       this._router.navigate(['/']);
       }
       else{

@@ -10,29 +10,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  items = [];
+  pets = [];
 
   constructor(private _httpService: HttpService, private _router: Router) { }
 
   ngOnInit() {
-    this.getItemsFromService();
+    this.getPetsFromService();
   }
 
-  getItemsFromService(){
-    let observable = this._httpService.getItems();
+  getPetsFromService(){
+    let observable = this._httpService.getPets();
     observable.subscribe(data => {
-      console.log("Got Items!", data)
-      this.items = data['data'];
+      console.log("Got Pets!", data)
+      this.pets = data['data'];
     });
 }
 
-  removeItem(id: string){
-    console.log("remove button working");
-    console.log("deleting item " + id);
-    let observable = this._httpService.deleteItem(id);
-    observable.subscribe(data => {
-      this.getItemsFromService();
-    
-    });
-  }
+
 }

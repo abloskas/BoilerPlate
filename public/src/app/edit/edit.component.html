@@ -3,8 +3,16 @@
 
 <a [routerLink]="['/']">Home</a>
 
-<h2>Edit this Item:</h2>
-<form (submit)= "editItem()">
-    Name: <input type="text" name="item['name']"  [(ngModel)]="item['name']"/>
-    <input type="submit" value="Submit"><button [routerLink]="['/']">Cancel</button>
-  </form>
+<h2>Edit details on this pet:</h2>
+<form class="edit-pet" (submit)= "editPet()">
+  Name: <input type="text" name="pet['name']" [(ngModel)]="pet['name']" />
+  Type: <input type="text" name="pet['type']" [(ngModel)]="pet['type']" />
+  Description: <input type="text" name="pet['description']" [(ngModel)]="pet['description']" />
+  Skills(optional): 
+  <br>
+  <input type="text" name="pet['skill_one']" [(ngModel)]="pet['skill_one']" />
+  <input type="text" name="pet['skill_two']" [(ngModel)]="pet['skill_two']" />
+  <input type="text" name="pet['skill_three']" [(ngModel)]="pet['skill_three']" />
+  <input class="enter" type="submit" value="Submit">
+  <button [routerLink]="['/']">Cancel</button>
+</form>

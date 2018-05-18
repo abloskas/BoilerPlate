@@ -7,30 +7,30 @@ import { HttpClient } from '@angular/common/http';
 export class HttpService {
 
   constructor(private _http: HttpClient){
-    this.getItems();
+    this.getPets();
   }
 
-  getItems(){
-    return this._http.get("/items");
+  getPets(){
+    return this._http.get("/pets");
   }
 
-  addItem(item){
-    return this._http.post('/items', item);
+  addPet(pet){
+    return this._http.post('/pets', pet);
   }
 
-  getThisItem(id: string){
-    console.log(`get item by id: ${id}`)
-    return this._http.get(`/items/${id}`);
+  getThisPet(id: string){
+    console.log(`get pet by id: ${id}`)
+    return this._http.get(`/pets/${id}`);
   }
 
-  UpdateItem(id: string, item){
-    console.log(`sending update request to/items/${id}`);
-    return this._http.post(`/items/${id}`, item);
+  UpdatePet(id: string, pet){
+    console.log(`sending update of pet request to/pets/${id}`);
+    return this._http.post(`/pets/${id}`, pet);
 
   }
 
-  deleteItem(id: string){
-    console.log(`sending delete request to items/${id}`);
-    return this._http.delete(`/items/${id}`);
+  deletePet(id: string){
+    console.log(`sending delete request to pets/${id}`);
+    return this._http.delete(`/pets/${id}`);
   }
 }

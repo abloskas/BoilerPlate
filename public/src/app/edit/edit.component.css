@@ -1,0 +1,9 @@
+.edit-pet input, .enter{
+    display: block;
+    margin-left: 50px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+button{
+    margin-left: 50px; 
+}

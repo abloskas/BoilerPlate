@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-var Item = require('../models/item');
+var Pet = require('../models/pet');
 
 function buildQueryHandler(res) {
     return function(err, result) {
@@ -21,27 +21,26 @@ function buildQueryHandler(res) {
 module.exports = {
 
     index: function(req, res){
-        Item.find({}, buildQueryHandler(res));
+        Pet.find({}, buildQueryHandler(res));
     },
   
     create: function(req, res){
-       var item = new Item({name: req.body.name}
-        );
-        item.save(buildQueryHandler(res));
+       var pet = new Pet({name: req.body.name, type: req.body.type, description: req.body.description, skill_one: req.body.skill_one, skill_two: req.body.skill_two, skill_three: req.body.skill_three});
+        pet.save(buildQueryHandler(res));
     },
 
     update: function(req, res){
         console.log("server side", req.params.id);
-        Item.updateOne({_id: req.params.id}, req.body, buildQueryHandler(res));
+        Pet.updateOne({_id: req.params.id}, req.body, { runValidators: true }, buildQueryHandler(res));
 
     },
 
     show: function(req, res) {
-        Item.findById({_id: req.params.id}, buildQueryHandler(res));
+        Pet.findById({_id: req.params.id}, buildQueryHandler(res));
     },
 
     destroy: function(req, res){
-        Item.deleteOne({_id: req.params.id}, buildQueryHandler(res));
+        Pet.deleteOne({_id: req.params.id}, buildQueryHandler(res));
     }
     
 }

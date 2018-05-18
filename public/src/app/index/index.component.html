@@ -1,18 +1,20 @@
 
-<a [routerLink]="['new']">Add an Item</a>
+<a [routerLink]="['new']">Add a Pet</a>
 
-<h3>We have quotes by:</h3>
-<table style="border: 3px solid black;border-collapse: collapse; width:200px; height:auto">
+<h3>These are the pets looking for a home!</h3>
+<table style="border: 3px solid black;border-collapse: collapse; width:350px; height:auto">
   <thead>
     <tr style="border: solid;border-width: 1px 0;">
-      <th>Item</th>
+      <th>Pet</th>
+      <th>Type</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of items">
-      <td>{{item.name}}</td>
-      <td><button [routerLink]="['/edit', item['_id']]">Edit</button> <button (click)="removeItem(item._id)">Delete </button></td>
+    <tr *ngFor="let pet of pets">
+      <td>{{pet.name}}</td>
+      <td>{{pet.type}}</td>
+      <td><button [routerLink]="['/pets', pet['_id'], 'edit']">Edit</button> <button [routerLink]="['/pets', pet['_id']]">Details</button></td>
     </tr>
   </tbody>
 </table>

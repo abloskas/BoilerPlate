@@ -6,12 +6,14 @@ import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
 
 const routes: Routes = [
-  {path: "", pathMatch: "full", component: IndexComponent},
-  {path: "new", component: NewComponent},
-  {path: "edit/:id", component: EditComponent},
-  {path: "show/:id", component: ShowComponent}
 
+  { path: 'pets', component: IndexComponent},
+  { path: '', pathMatch: 'full', redirectTo: '/pets'},
+  { path: 'pets/new', component: NewComponent},
+  { path: "pets/:id", component: ShowComponent},
+  { path: 'pets/:id/edit', component: EditComponent}
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
