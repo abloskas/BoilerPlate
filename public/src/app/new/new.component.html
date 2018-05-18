@@ -3,15 +3,16 @@
 
 <a [routerLink]="['/']">Home</a>
 <h2>Know of a pet needing a home?</h2>
-<form class="new-pet" (submit)= "addPet()">
-    Name: <input type="text" name="newPet['name']" [(ngModel)]="newPet['name']" />
-    Type: <input type="text" name="newPet['type']" [(ngModel)]="newPet['type']" />
-    Description: <input type="text" name="newPet['description']" [(ngModel)]="newPet['description']" />
-    Skills(optional): 
-    
-    <input type="text" name="newPet['skill_one']" [(ngModel)]="newPet['skill_one']" />
-    <input type="text" name="newPet['skill_two']" [(ngModel)]="newPet['skill_two']" />
-    <input type="text" name="newPet['skill_three']" [(ngModel)]="newPet['skill_three']" />
-    <input class="enter" type="submit" value="Submit">
-    <button [routerLink]="['/']">Cancel</button>
-  </form>
+<div class="custom form-group border border-dark rounded">
+  <form class="new-pet" (submit)= "addPet()">
+      Name: <input size="45" class="form-control-lg" type="text" name="newPet['name']" [(ngModel)]="newPet['name']" />
+      Type: <input size="45" class="form-control-lg" type="text" name="newPet['type']" [(ngModel)]="newPet['type']" />
+      Description: <input size="45" class="form-control-lg" type="text" name="newPet['description']" [(ngModel)]="newPet['description']" />
+      Skills(optional): 
+        <input size="45" class="form-control-lg" type="text" name="newPet['skill_one']" [(ngModel)]="newPet['skill_one']" />
+        <input size="45" class="form-control-lg" type="text" name="newPet['skill_two']" [(ngModel)]="newPet['skill_two']" />
+        <input size="45" class="form-control-lg" type="text" name="newPet['skill_three']" [(ngModel)]="newPet['skill_three']" />
+      <input class="enter" type="submit" value="Submit">
+      <button [routerLink]="['/']">Cancel</button>
+    </form>
+  </div>

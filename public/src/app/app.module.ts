@@ -9,6 +9,7 @@ import { ShowComponent } from './show/show.component';
 import { EditComponent } from './edit/edit.component';
 import { NewComponent } from './new/new.component';
 import { FormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     IndexComponent,
     ShowComponent,
     EditComponent,
-    NewComponent
+    NewComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

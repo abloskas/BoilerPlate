@@ -4,6 +4,7 @@ import { IndexComponent } from './index/index.component';
 import { NewComponent } from './new/new.component';
 import { EditComponent } from './edit/edit.component';
 import { ShowComponent } from './show/show.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
 
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/pets'},
   { path: 'pets/new', component: NewComponent},
   { path: "pets/:id", component: ShowComponent},
-  { path: 'pets/:id/edit', component: EditComponent}
+  { path: 'pets/:id/edit', component: EditComponent},
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 
